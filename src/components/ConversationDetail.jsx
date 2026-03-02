@@ -84,9 +84,10 @@ export function ConversationDetail({
               </button>
               <button
                 type="button"
-                className="btn-small"
+                className="btn-small btn-extract-recommendations"
                 onClick={() => onExtractRecommendations?.()}
                 disabled={extractingRecommendations}
+                aria-label="Extract recommendations"
               >
                 {extractingRecommendations ? 'Extracting…' : 'Recommendations'}
               </button>

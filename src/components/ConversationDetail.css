@@ -150,9 +150,36 @@
 }
 
 @media (max-width: 768px) {
-  .summary-section h2 .btn-small {
+  .conversation-detail .summary-section {
+    touch-action: pan-y;
+  }
+
+  .conversation-detail .summary-section h2 {
+    gap: 0.75rem;
+  }
+
+  .conversation-detail .summary-section h2 .btn-small,
+  .conversation-detail .btn-add-highlight {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: 44px;
+    min-width: 44px;
     padding: 0.5rem 0.85rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+    touch-action: manipulation;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+
+  .recommendation-item-detail .btn-remove-rec {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    top: 0.25rem;
+    right: 0.25rem;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
     touch-action: manipulation;
   }

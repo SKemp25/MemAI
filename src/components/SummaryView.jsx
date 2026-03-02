@@ -32,15 +32,19 @@ export function SummaryView({
   const hasKey = getApiKey();
 
   return (
-    <article className="summary-view">
+    <article className="summary-view view-page">
       <header>
         <h1>Summaries</h1>
       </header>
 
+      <p className="view-hint summary-view-hint">
+        Summaries pulled from your conversations. Use the <strong>Summarize</strong> button on a conversation to generate them.
+      </p>
+
       {!hasKey && (
-        <section className="api-key-section">
+        <section className="api-key-section view-card">
           <p className="api-key-hint">
-            <strong>Summarize works without an account</strong>—you get a short preview from the start of the text. Optionally add an OpenAI API key below for AI-written summaries (uses your OpenAI plan; key stored only on this device).
+            Optionally add an OpenAI API key below for AI-written summaries (uses your OpenAI plan; key stored only on this device).
           </p>
           {showKeyForm ? (
             <form onSubmit={handleSaveKey} className="api-key-form">
@@ -67,12 +71,6 @@ export function SummaryView({
         </section>
       )}
 
-      {hasKey && (
-        <p className="summary-view-hint">
-          With an API key set, <strong>Summarize</strong> uses AI. You can also use it without a key for a quick preview. Open a conversation or use the buttons below.
-        </p>
-      )}
-
       {summarizeError && (
         <p className="summary-view-error" role="alert">
           {summarizeError}
@@ -84,7 +82,7 @@ export function SummaryView({
           <li className="empty">No conversations yet. Save one from the Conversations tab.</li>
         )}
         {conversations.map((c) => (
-          <li key={c.id} className="summary-list-item">
+          <li key={c.id} className="summary-list-item view-card">
             <button
               type="button"
               className="summary-item-title"

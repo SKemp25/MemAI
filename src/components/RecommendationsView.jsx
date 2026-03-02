@@ -93,14 +93,14 @@ export function RecommendationsView({
   };
 
   return (
-    <article className="recommendations-view">
+    <article className="recommendations-view view-page">
       <header>
         <h1>Recommendations</h1>
       </header>
-      <p className="recommendations-hint">
+      <p className="view-hint recommendations-hint">
         Names, books, movies, recipes, and links pulled from your conversations. Use the <strong>Recommendations</strong> button on a conversation to extract them.
       </p>
-      <div className="recommendations-controls">
+      <div className="view-controls recommendations-controls">
         <div className="filter-row">
           <label className="filter-group">
             <span className="filter-label">Category</span>

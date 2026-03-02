@@ -1,29 +1,9 @@
-.summary-view {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 1.5rem 2rem;
-  overflow-y: auto;
+.summary-view.view-page header {
+  margin-bottom: 0;
 }
 
-.summary-view header {
-  margin-bottom: 1rem;
-}
-
-.summary-view h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.api-key-section {
+.api-key-section.view-card {
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
 }
 
 .api-key-hint {
@@ -46,7 +26,7 @@
   font-size: 0.875rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text);
 }
 
@@ -70,11 +50,6 @@
   color: var(--text);
 }
 
-.summary-view-hint {
-  margin: 0 0 1rem;
-  font-size: 0.875rem;
-  color: var(--muted);
-}
 
 .summary-view-error {
   margin: 0 0 1rem;
@@ -94,12 +69,8 @@
   font-size: 0.875rem;
 }
 
-.summary-list-item {
+.summary-list-item.view-card {
   margin-bottom: 1rem;
-  padding: 1rem;
-  background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
 }
 
 .summary-item-title {

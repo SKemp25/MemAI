@@ -211,6 +211,7 @@ export default function App() {
             onAdd={() => setShowAdd(true)}
           />
         )}
+        <UsageGuide />
         {view === 'conversations' && (
           <ThemeSwitcher
             theme={theme || 'default'}
@@ -222,7 +223,6 @@ export default function App() {
             }}
           />
         )}
-        <UsageGuide />
         <SecurityAndBackup
           conversations={conversations}
           recommendations={recommendations}

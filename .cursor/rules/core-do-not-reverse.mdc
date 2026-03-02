@@ -1,0 +1,22 @@
+---
+description: Core features and data—do not remove or reverse these in future changes
+alwaysApply: true
+---
+
+# Core: Do Not Reverse
+
+Future work on this project is **enhancement only**. Do not remove, replace, or reverse the following.
+
+## Data & storage
+
+- **Store** (`src/data/store.js`): Conversations, recommendations, categories, tags; theme and custom accent in localStorage. `load`/`save`, `loadTheme`/`saveTheme`, `loadCustomAccent`/`saveCustomAccent`, `addRecommendation` (including type `highlight`).
+- **Recommendation shape**: `id`, `conversationId`, `type` (name, book, movie, recipe, link, **highlight**), `text`, `url`, `createdAt`. Do not change or drop these fields for existing data.
+
+## Features to preserve
+
+- **Color Palette**: Chill, Warm, High contrast, **Custom** (color picker); only visible on **Conversations** view.
+- **Navigation order**: Conversations → **Recommendations** → Summary (Recommendations next to Conversations).
+- **Recommendations**: Extract from conversation (button), **Add selection to Recommendations** (highlighted text), remove from recommendations; **Recommendations** tab with Category + Type (e.g. Highlighted text only) + Sort (Newest first, Oldest first, A–Z, Z–A) + keyword search; newest-first default.
+- **Summary** tab and summarize flow; **ConversationDetail** with recommendations section and full conversation with add-selection button.
+
+When adding or changing behavior, keep existing data structures, storage keys, and the above flows intact.

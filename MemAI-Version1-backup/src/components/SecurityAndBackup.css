@@ -1,0 +1,127 @@
+.security-backup {
+  padding: 0.35rem 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.security-backup-open {
+  padding-bottom: 0.5rem;
+}
+
+.security-backup-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.3rem 0.25rem 0.3rem 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.security-backup-toggle:hover {
+  color: var(--text);
+}
+
+.security-backup-label {
+  font-weight: 500;
+}
+
+.security-backup-chevron {
+  font-size: 0.5625rem;
+  opacity: 0.8;
+}
+
+.security-backup-content {
+  margin-top: 0.4rem;
+  padding-left: 0.125rem;
+}
+
+.security-backup-instruction {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.security-backup-block {
+  margin-bottom: 0.75rem;
+}
+
+.security-backup-subtitle {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.security-backup-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8125rem;
+  background: var(--hover);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.security-backup-btn:hover {
+  background: var(--border);
+}
+
+.security-backup-btn-danger {
+  color: var(--danger);
+}
+
+.security-backup-file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.security-backup-pin-form {
+  margin-top: 0.25rem;
+}
+
+.security-backup-pin-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8125rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.security-backup-pin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.security-backup-pin-actions .security-backup-btn {
+  width: auto;
+  margin-bottom: 0;
+}
+
+.security-backup-error,
+.security-backup-msg {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.security-backup-error {
+  color: var(--danger);
+}

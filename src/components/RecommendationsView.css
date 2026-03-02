@@ -1,0 +1,192 @@
+.recommendations-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+}
+
+.recommendations-view header {
+  margin-bottom: 0.5rem;
+}
+
+.recommendations-view h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.recommendations-hint {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.recommendations-controls {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+}
+
+.filter-group,
+.search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.filter-group select {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  min-width: 8rem;
+}
+
+.search-group {
+  max-width: 20rem;
+}
+
+.recommendations-search {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.recommendations-search::placeholder {
+  color: var(--muted);
+}
+
+.all-recommendations {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.all-recommendations li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 1.75rem 0.6rem 0.75rem;
+  margin-bottom: 0.25rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.all-recommendations li.empty {
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.rec-type-badge {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.15rem 0.4rem;
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.recommendation-row .rec-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9375rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.recommendation-row .rec-text .content-link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.recommendation-row .rec-text .content-link:hover {
+  text-decoration: none;
+}
+
+.recommendation-row .rec-text .rec-url-secondary {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 1024px) {
+  .recommendation-row .rec-text .rec-url-secondary {
+    display: none;
+  }
+}
+
+.rec-conversation-link {
+  flex-shrink: 0;
+  max-width: 160px;
+  padding: 0;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rec-conversation-link:hover {
+  text-decoration: underline;
+}
+
+.recommendations-view .btn-remove {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.recommendations-view .btn-remove:hover {
+  color: var(--danger);
+  background: var(--hover);
+}

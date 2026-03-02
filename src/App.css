@@ -126,21 +126,22 @@
 
 @media (max-width: 600px) {
   .welcome {
-    padding: 1.25rem 1.5rem;
+    padding: 0.75rem 1rem 1rem;
     justify-content: flex-start;
   }
 
   .welcome h1 {
-    font-size: 1.4rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
   }
 
   .welcome-block {
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.5rem;
   }
 
   .welcome-block p {
     max-width: 100%;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.35;
   }
 }

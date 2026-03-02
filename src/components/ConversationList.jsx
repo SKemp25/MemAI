@@ -42,6 +42,7 @@ export function ConversationList({
   onSelect,
   onAdd,
   selectedId,
+  showSaved = false,
 }) {
   const [search, setSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
@@ -97,7 +98,7 @@ export function ConversationList({
   return (
     <section className="conversation-list">
       <header>
-        <h2>Saved</h2>
+        <h2>{showSaved ? 'Saved' : 'Conversations'}</h2>
         <button type="button" className="btn-primary" onClick={onAdd}>
           + New
         </button>

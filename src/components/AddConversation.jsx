@@ -71,7 +71,7 @@ export function AddConversation({
   return (
     <article className="add-conversation">
       <header>
-        <h1>{isEdit ? 'Edit conversation' : 'Save conversation or snippet'}</h1>
+        <h1>{isEdit ? 'Edit chat' : 'Save chat'}</h1>
         <button type="button" className="btn-back" onClick={onCancel}>
           ← Cancel
         </button>

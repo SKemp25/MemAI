@@ -149,6 +149,15 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .summary-section h2 .btn-small {
+    min-height: 44px;
+    padding: 0.5rem 0.85rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+    touch-action: manipulation;
+  }
+}
+
 .btn-small:hover:not(:disabled) {
   background: var(--accent);
   color: var(--bg);

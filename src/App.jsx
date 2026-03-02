@@ -54,6 +54,7 @@ export default function App() {
   const [summarizeError, setSummarizeError] = useState(null);
   const [extractingRecommendationsId, setExtractingRecommendationsId] = useState(null);
   const [recommendationsError, setRecommendationsError] = useState(null);
+  const [justSaved, setJustSaved] = useState(false);
 
   useEffect(() => {
     const t = theme || 'default';
@@ -158,12 +159,16 @@ export default function App() {
     const newId = addConversation(payload);
     setShowAdd(false);
     if (newId) setSelectedId(newId);
+    setJustSaved(true);
+    setTimeout(() => setJustSaved(false), 2000);
   };
 
   const handleEditConversation = (payload) => {
     if (!editingId) return;
     updateConversation(editingId, payload);
     setEditingId(null);
+    setJustSaved(true);
+    setTimeout(() => setJustSaved(false), 2000);
   };
 
   if (!unlocked) {
@@ -172,8 +177,11 @@ export default function App() {
     );
   }
 
+  const sidebarExpanded = view === 'conversations' && !showAdd && !editingId && !selected;
+  const addPanelOpen = view === 'conversations' && (showAdd || editingId);
+
   return (
-    <div className="app">
+    <div className={`app${sidebarExpanded ? ' sidebar-expanded' : ''}${addPanelOpen ? ' add-panel-open' : ''}`}>
       <aside className="sidebar">
         <nav className="main-nav">
           <button
@@ -201,7 +209,7 @@ export default function App() {
             Summary
           </button>
         </nav>
-        {view === 'conversations' && (
+        {view === 'conversations' && !addPanelOpen && (
           <ConversationList
             conversations={conversations}
             categories={categories}
@@ -209,10 +217,11 @@ export default function App() {
             selectedId={selectedId}
             onSelect={handleSelect}
             onAdd={() => setShowAdd(true)}
+            showSaved={justSaved}
           />
         )}
-        <UsageGuide />
-        {view === 'conversations' && (
+        {view === 'conversations' && !addPanelOpen && <UsageGuide />}
+        {view === 'conversations' && !addPanelOpen && (
           <ThemeSwitcher
             theme={theme || 'default'}
             onThemeChange={setTheme}
@@ -223,18 +232,20 @@ export default function App() {
             }}
           />
         )}
-        <SecurityAndBackup
-          conversations={conversations}
-          recommendations={recommendations}
-          categories={categories}
-          tags={tags}
-          theme={theme}
-          customAccent={customAccent}
-          replaceData={replaceData}
-          setTheme={setTheme}
-          setCustomAccent={setCustomAccent}
-          onLock={() => setUnlocked(false)}
-        />
+        {view === 'conversations' && !addPanelOpen && (
+          <SecurityAndBackup
+            conversations={conversations}
+            recommendations={recommendations}
+            categories={categories}
+            tags={tags}
+            theme={theme}
+            customAccent={customAccent}
+            replaceData={replaceData}
+            setTheme={setTheme}
+            setCustomAccent={setCustomAccent}
+            onLock={() => setUnlocked(false)}
+          />
+        )}
       </aside>
       <main className="main">
         {view === 'recommendations' && (
@@ -306,17 +317,19 @@ export default function App() {
           />
         )}
         {view === 'conversations' && !showAdd && !selected && (
-          <div className="welcome">
-            <h1>MemAI</h1>
-            <div className="welcome-block">
-              <p>Recall all that's important to you.</p>
-              <p>Save chats from AI and content from life.</p>
+          conversations.length === 0 ? (
+            <div className="welcome">
+              <h1>MemAI</h1>
+              <div className="welcome-block">
+                <p>Recall all that's important to you.</p>
+                <p>Save chats from AI and content from life.</p>
+              </div>
+              <div className="welcome-block">
+                <p>Tap <strong>+ New</strong> to paste and save.</p>
+                <p>Everything stays on this device.</p>
+              </div>
             </div>
-            <div className="welcome-block">
-              <p>Tap <strong>+ New</strong> to paste and save.</p>
-              <p>Everything stays on this device.</p>
-            </div>
-          </div>
+          ) : null
         )}
       </main>
     </div>

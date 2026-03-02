@@ -115,17 +115,21 @@
 }
 
 .recommendation-row .rec-text {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
+  max-width: min(33.33vw, 100%);
   font-size: 0.9375rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
+  display: block;
 }
 
 .recommendation-row .rec-text .content-link {
   color: var(--accent);
   text-decoration: underline;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .recommendation-row .rec-text .content-link:hover {
@@ -189,4 +193,37 @@
 .recommendations-view .btn-remove:hover {
   color: var(--danger);
   background: var(--hover);
+}
+
+@media (max-width: 768px) {
+  .recommendations-view {
+    padding: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .recommendations-view .btn-remove {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+    touch-action: manipulation;
+  }
+
+  .rec-conversation-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+    touch-action: manipulation;
+  }
+
+  .filter-group select,
+  .recommendations-search {
+    min-height: 44px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+    touch-action: manipulation;
+  }
 }

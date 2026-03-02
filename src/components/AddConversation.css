@@ -118,3 +118,39 @@
 .btn-secondary:hover {
   background: var(--hover);
 }
+
+@media (max-width: 600px) {
+  .add-conversation {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 1rem 1.25rem;
+    background: var(--surface);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 16px 16px 0 0;
+    z-index: 20;
+  }
+
+  .add-conversation h1 {
+    font-size: 1.15rem;
+  }
+
+  .add-conversation .hint {
+    font-size: 0.8rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .add-conversation form textarea {
+    min-height: 140px;
+  }
+
+  .add-conversation .form-actions {
+    position: sticky;
+    bottom: 0;
+    padding-top: 0.5rem;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0.5rem));
+    background: linear-gradient(to top, var(--surface) 70%, transparent);
+  }
+}

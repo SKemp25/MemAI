@@ -24,7 +24,7 @@ export function UsageGuide() {
             <li><strong>Recommendations tab</strong> — Filter by category or “Highlighted text only”, sort (newest, A–Z, etc.), search by keyword.</li>
             <li><strong>Summary tab</strong> — Add an OpenAI API key for AI summaries (optional).</li>
             <li><strong>Color palette</strong> — On Conversations only: Chill, Warm, High contrast, or Custom.</li>
-            <li><strong>Security & backup</strong> — Set a PIN to lock the app. Export your data and save the file to your device or cloud (e.g. iCloud, Google Drive) so you don’t lose it; use Import to restore.</li>
+            <li><strong>Security & Backup</strong> — Set a PIN to lock the app. Export your data and save the file to your device or cloud (e.g. iCloud, Google Drive) so you don’t lose it; use Import to restore.</li>
           </ul>
           <p className="usage-guide-footer">All data is stored on this device only. Export regularly to back up.</p>
         </div>

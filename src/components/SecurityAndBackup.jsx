@@ -264,7 +264,7 @@ export function SecurityAndBackup({
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        <span className="security-backup-label">Security & backup</span>
+        <span className="security-backup-label">Security & Backup</span>
         <span className="security-backup-chevron" aria-hidden>{open ? '▼' : '▶'}</span>
       </button>
       {open && (

@@ -86,6 +86,12 @@ export function ConversationDetail({
                 type="button"
                 className="btn-small btn-extract-recommendations"
                 onClick={() => onExtractRecommendations?.()}
+                onTouchEnd={(e) => {
+                  if (extractingRecommendations || !onExtractRecommendations) return;
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onExtractRecommendations();
+                }}
                 disabled={extractingRecommendations}
                 aria-label="Extract recommendations"
               >

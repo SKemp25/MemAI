@@ -163,14 +163,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 0.5rem 0.85rem;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.6rem 1rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.12);
     touch-action: manipulation;
     cursor: pointer;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .conversation-detail .summary-section h2 .btn-extract-recommendations {
+    min-width: 140px;
   }
 
   .recommendation-item-detail .btn-remove-rec {

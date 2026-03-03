@@ -93,17 +93,19 @@ export function SummaryView({
             {c.summary ? (
               <p className="summary-item-text">{linkifyContent(c.summary)}</p>
             ) : (
-              <p className="summary-item-placeholder">No summary yet.</p>
-            )}
-            {c.content?.trim() && (
-              <button
-                type="button"
-                className="btn-small"
-                onClick={() => onSummarize(c.id)}
-                disabled={summarizingId === c.id}
-              >
-                {summarizingId === c.id ? 'Summarizing…' : 'Summarize'}
-              </button>
+              <>
+                <p className="summary-item-placeholder">No summary yet.</p>
+                {c.content?.trim() && (
+                  <button
+                    type="button"
+                    className="btn-small"
+                    onClick={() => onSummarize(c.id)}
+                    disabled={summarizingId === c.id}
+                  >
+                    {summarizingId === c.id ? 'Summarizing…' : 'Summarize'}
+                  </button>
+                )}
+              </>
             )}
           </li>
         ))}
